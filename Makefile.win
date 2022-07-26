@@ -1,0 +1,61 @@
+# Project: fileMS
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o command.o copy_paste.o create_delete_dir.o create_delete_file.o dir.o format.o freeblock.o init.o read_write.o user.o exit.o
+LINKOBJ  = main.o command.o copy_paste.o create_delete_dir.o create_delete_file.o dir.o format.o freeblock.o init.o read_write.o user.o exit.o
+LIBS     = -L"D:/dev/Dev-Cpp/MinGW64/lib" -L"D:/dev/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/dev/Dev-Cpp/MinGW64/include" -I"D:/dev/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/dev/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/dev/Dev-Cpp/MinGW64/include" -I"D:/dev/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/dev/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/dev/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = fileMS.exe
+CXXFLAGS = $(CXXINCS) -g3 -g3
+CFLAGS   = $(INCS) -g3 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+command.o: command.cpp
+	$(CPP) -c command.cpp -o command.o $(CXXFLAGS)
+
+copy_paste.o: copy_paste.cpp
+	$(CPP) -c copy_paste.cpp -o copy_paste.o $(CXXFLAGS)
+
+create_delete_dir.o: create_delete_dir.cpp
+	$(CPP) -c create_delete_dir.cpp -o create_delete_dir.o $(CXXFLAGS)
+
+create_delete_file.o: create_delete_file.cpp
+	$(CPP) -c create_delete_file.cpp -o create_delete_file.o $(CXXFLAGS)
+
+dir.o: dir.cpp
+	$(CPP) -c dir.cpp -o dir.o $(CXXFLAGS)
+
+format.o: format.cpp
+	$(CPP) -c format.cpp -o format.o $(CXXFLAGS)
+
+freeblock.o: freeblock.cpp
+	$(CPP) -c freeblock.cpp -o freeblock.o $(CXXFLAGS)
+
+init.o: init.cpp
+	$(CPP) -c init.cpp -o init.o $(CXXFLAGS)
+
+read_write.o: read_write.cpp
+	$(CPP) -c read_write.cpp -o read_write.o $(CXXFLAGS)
+
+user.o: user.cpp
+	$(CPP) -c user.cpp -o user.o $(CXXFLAGS)
+
+exit.o: exit.cpp
+	$(CPP) -c exit.cpp -o exit.o $(CXXFLAGS)
